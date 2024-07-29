@@ -12,6 +12,7 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.text.pdf.parser.Matrix;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,47 +32,45 @@ public class FormularioPdf {
     private static void agregarFormulario(PdfDocument pdfDocument) throws MalformedURLException {
 
         Map<String, PdfTextFormField> camposPaginaUno = new HashMap<>();
-        camposPaginaUno.put("campoA", createText(pdfDocument, new Rectangle(235, 650, 224, 9), "nameA", ""));
-        camposPaginaUno.put("campoB", createText(pdfDocument, new Rectangle(475, 650, 35, 9), "nameB", ""));
-        camposPaginaUno.put("campoC", createText(pdfDocument, new Rectangle(227, 616, 215, 11), "nameC", ""));
-        camposPaginaUno.put("campoD", createText(pdfDocument, new Rectangle(92, 597, 114, 11), "nameD", ""));
-        camposPaginaUno.put("campoE", createText(pdfDocument, new Rectangle(174, 580, 164, 11), "nameE", ""));
-        camposPaginaUno.put("campoF", createText(pdfDocument, new Rectangle(355, 580, 35, 11), "nameF", ""));
-        camposPaginaUno.put("campoG", createText(pdfDocument, new Rectangle(414, 580, 23, 11), "nameG", ""));
-        camposPaginaUno.put("campoH", createText(pdfDocument, new Rectangle(470, 580, 50, 11), "nameH", ""));
-        camposPaginaUno.put("campoI", createText(pdfDocument, new Rectangle(136, 563, 84, 11), "nameI", ""));
-        camposPaginaUno.put("campoJ", createText(pdfDocument, new Rectangle(243, 563, 60, 11), "nameJ", ""));
-        camposPaginaUno.put("campoK", createText(pdfDocument, new Rectangle(358, 563, 115, 11), "nameK", ""));
-        camposPaginaUno.put("campoL", createText(pdfDocument, new Rectangle(180, 545, 203, 11), "nameL", ""));
-        camposPaginaUno.put("campoM", createText(pdfDocument, new Rectangle(246, 525, 10, 11), "nameM", ""));
-        camposPaginaUno.put("campoN", createText(pdfDocument, new Rectangle(322, 525, 10, 11), "nameN", ""));
-        camposPaginaUno.put("campoO", createText(pdfDocument, new Rectangle(92, 472, 10, 11), "nameO", ""));
-        camposPaginaUno.put("campoP", createText(pdfDocument, new Rectangle(151, 472, 10, 11), "nameP", ""));
-        camposPaginaUno.put("campoQ", createText(pdfDocument, new Rectangle(244, 470, 10, 11), "nameQ", ""));
-        camposPaginaUno.put("campoR", createText(pdfDocument, new Rectangle(340, 470, 10, 11), "nameR", ""));
-        camposPaginaUno.put("campoS", createText(pdfDocument, new Rectangle(92, 437, 145, 11), "nameS", ""));
-        camposPaginaUno.put("campoT", createText(pdfDocument, new Rectangle(242, 437, 107, 11), "nameT", ""));
-        camposPaginaUno.put("campoU", createText(pdfDocument, new Rectangle(369, 437, 32, 11), "nameU", ""));
-        camposPaginaUno.put("campoV", createText(pdfDocument, new Rectangle(451, 437, 68, 11), "nameV", ""));
-        camposPaginaUno.put("campoW", createText(pdfDocument, new Rectangle(160, 418, 65, 11), "nameW", ""));
-        camposPaginaUno.put("campoX", createText(pdfDocument, new Rectangle(92, 401, 15, 11), "nameX", ""));
-        camposPaginaUno.put("campoY", createText(pdfDocument, new Rectangle(128, 401, 15, 11), "nameY", ""));
-        camposPaginaUno.put("campoZ", createText(pdfDocument, new Rectangle(158, 401, 26, 11), "nameZ", ""));
-        camposPaginaUno.put("campoAA", createText(pdfDocument, new Rectangle(231, 401, 25, 11), "nameAA", ""));
-        camposPaginaUno.put("campoAB", createText(pdfDocument, new Rectangle(433, 250, 100, 22), "nameAB", ""));
-        camposPaginaUno.put("campoAC", createText(pdfDocument, new Rectangle(433, 231, 100, 22), "nameAC", ""));
-        camposPaginaUno.put("campoAD", createText(pdfDocument, new Rectangle(433, 212, 100, 22), "nameAD", ""));
-        camposPaginaUno.put("campoAE", createText(pdfDocument, new Rectangle(433, 164, 100, 50), "nameAE", ""));
-        camposPaginaUno.put("campoCheckTablaA", createText(pdfDocument, new Rectangle(92, 173, 12, 11), "nameCheckTablaA", ""));
-        camposPaginaUno.put("campoCheckTablaB", createText(pdfDocument, new Rectangle(181, 173, 12, 11), "nameCheckTablaB", ""));
-        camposPaginaUno.put("campoCheckTablaC", createText(pdfDocument, new Rectangle(255, 165, 20, 26), "nameCheckTablaC", ""));
-        camposPaginaUno.put("campoCheckTablaD", createText(pdfDocument, new Rectangle(285, 173, 12, 11), "nameCheckTablaD", ""));
-        camposPaginaUno.put("campoCheckTablaE", createText(pdfDocument, new Rectangle(345, 170, 20, 26), "nameCheckTablaE", ""));
-        camposPaginaUno.put("campoAF", createText(pdfDocument, new Rectangle(433, 144, 100, 22), "nameAF", ""));
-        camposPaginaUno.put("campoAG", createText(pdfDocument, new Rectangle(433, 125, 100, 22), "nameAG", ""));
-        camposPaginaUno.put("campoAH", createText(pdfDocument, new Rectangle(433, 102, 100, 27), "nameAH", ""));
-        camposPaginaUno.put("campoAI", createText(pdfDocument, new Rectangle(433, 82, 100, 22), "nameAI", ""));
-        camposPaginaUno.put("campoAJ", createText(pdfDocument, new Rectangle(433, 82, 100, 22), "nameAJ", ""));
+        camposPaginaUno.put("fechaDiaMes", createText(pdfDocument, new Rectangle(235, 650, 224, 9), "fechaDiaMes", ""));
+        camposPaginaUno.put("fechaAnio", createText(pdfDocument, new Rectangle(475, 650, 35, 9), "fechaAnio", ""));
+        camposPaginaUno.put("suscriptorNombre", createText(pdfDocument, new Rectangle(227, 616, 215, 11), "suscriptorNombre", ""));
+        camposPaginaUno.put("suscriptorDni", createText(pdfDocument, new Rectangle(92, 597, 114, 11), "suscriptorDni", ""));
+        camposPaginaUno.put("direccionDomicilio", createText(pdfDocument, new Rectangle(174, 580, 164, 11), "direccionDomicilio", ""));
+        camposPaginaUno.put("direccionNumero", createText(pdfDocument, new Rectangle(355, 580, 35, 11), "direccionNumero", ""));
+        camposPaginaUno.put("direccionPiso", createText(pdfDocument, new Rectangle(414, 580, 23, 11), "direccionPiso", ""));
+        camposPaginaUno.put("direccionDepartamento", createText(pdfDocument, new Rectangle(470, 580, 50, 11), "direccionDepartamento", ""));
+        camposPaginaUno.put("direccionLocalidad", createText(pdfDocument, new Rectangle(136, 563, 84, 11), "direccionLocalidad", ""));
+        camposPaginaUno.put("direccionCodigoPostal", createText(pdfDocument, new Rectangle(243, 563, 60, 11), "direccionCodigoPostal", ""));
+        camposPaginaUno.put("telefono", createText(pdfDocument, new Rectangle(358, 563, 115, 11), "telefono", ""));
+        camposPaginaUno.put("mail", createText(pdfDocument, new Rectangle(180, 545, 203, 11), "mail", ""));
+        camposPaginaUno.put("caracterPropietario", createText(pdfDocument, new Rectangle(246, 525, 12, 11), "caracterPropietario", ""));
+        camposPaginaUno.put("caracterApoderado", createText(pdfDocument, new Rectangle(322, 525, 12, 11), "caracterApoderado", ""));
+        camposPaginaUno.put("factibilidadAgua", createText(pdfDocument, new Rectangle(92, 472, 12, 11), "factibilidadAgua", ""));
+        camposPaginaUno.put("factibilidadCloaca", createText(pdfDocument, new Rectangle(151, 472, 12, 11), "factibilidadCloaca", ""));
+        camposPaginaUno.put("factibilidadAmpliacion", createText(pdfDocument, new Rectangle(244, 470, 12, 11), "factibilidadAmpliacion", ""));
+        camposPaginaUno.put("factibilidadRenovacion", createText(pdfDocument, new Rectangle(340, 470, 12, 11), "factibilidadRenovacion", ""));
+        camposPaginaUno.put("predioCalle", createText(pdfDocument, new Rectangle(92, 437, 259, 11), "predioCalle", ""));
+        camposPaginaUno.put("predioNumero", createText(pdfDocument, new Rectangle(369, 437, 32, 11), "predioNumero", ""));
+        camposPaginaUno.put("predioLocalidad", createText(pdfDocument, new Rectangle(451, 437, 68, 11), "predioLocalidad", ""));
+        camposPaginaUno.put("predioPartido", createText(pdfDocument, new Rectangle(159, 418, 65, 11), "predioPartido", ""));
+        camposPaginaUno.put("catastroCirc", createText(pdfDocument, new Rectangle(88, 401, 19, 8), "catastroCirc", ""));
+        camposPaginaUno.put("catastroSec", createText(pdfDocument, new Rectangle(124, 401, 19, 8), "catastroSec", ""));
+        camposPaginaUno.put("catastroMz", createText(pdfDocument, new Rectangle(155, 401, 26, 8), "catastroMz", ""));
+        camposPaginaUno.put("catastroParcela", createText(pdfDocument, new Rectangle(231, 401, 25, 11), "catastroParcela", ""));
+        camposPaginaUno.put("codigoZonificacion", createText(pdfDocument, new Rectangle(433, 250, 100, 22), "codigoZonificacion", ""));
+        camposPaginaUno.put("tiempoEstimadoEjecucionObra", createText(pdfDocument, new Rectangle(433, 231, 100, 22), "tiempoEstimadoEjecucionObra", ""));
+        camposPaginaUno.put("destinoObra", createText(pdfDocument, new Rectangle(433, 212, 100, 22), "destinoObra", ""));
+        camposPaginaUno.put("superficieTotalCubierta", createText(pdfDocument, new Rectangle(433, 164, 100, 50), "superficieTotalCubierta", ""));
+        camposPaginaUno.put("superficieTotalCubiertaComplejoGlobal", createText(pdfDocument, new Rectangle(92, 174, 12, 11), "superficieTotalCubiertaComplejoGlobal", ""));
+        camposPaginaUno.put("superficieTotalCubiertaCantidadTorres", createText(pdfDocument, new Rectangle(181, 174, 12, 11), "superficieTotalCubiertaCantidadTorres", ""));
+        camposPaginaUno.put("superficieTotalCubiertaCantidadTorresNumero", createText(pdfDocument, new Rectangle(255, 165, 20, 26), "superficieTotalCubiertaCantidadTorresNumero", ""));
+        camposPaginaUno.put("superficieTotalCubiertaTorre", createText(pdfDocument, new Rectangle(285, 174, 12, 11), "superficieTotalCubiertaTorre", ""));
+        camposPaginaUno.put("superficieTotalCubiertaTorreNumero", createText(pdfDocument, new Rectangle(345, 170, 20, 26), "superficieTotalCubiertaTorreNumero", ""));
+        camposPaginaUno.put("cantidadUnidadesFuncionales", createText(pdfDocument, new Rectangle(433, 144, 100, 22), "cantidadUnidadesFuncionales", ""));
+        camposPaginaUno.put("alturaEdificioSobreRasante", createText(pdfDocument, new Rectangle(433, 125, 100, 22), "alturaEdificioSobreRasante", ""));
+        camposPaginaUno.put("volumenTotalReservaSanitaria", createText(pdfDocument, new Rectangle(433, 102, 100, 27), "volumenTotalReservaSanitaria", ""));
+        camposPaginaUno.put("volumenContraIncendio", createText(pdfDocument, new Rectangle(433, 82, 100, 22), "volumenContraIncendio", ""));
 
         camposPaginaUno
                 .keySet()
@@ -86,23 +85,23 @@ public class FormularioPdf {
                 });
 
         Map<String, PdfTextFormField> camposPaginaDos = new HashMap<>();
-        camposPaginaDos.put("campoAK", createText(pdfDocument, new Rectangle(432, 703, 100, 22), "nameAK", ""));
-        camposPaginaDos.put("campoAL", createText(pdfDocument, new Rectangle(432, 657, 100, 50), "nameAL", ""));
-        camposPaginaDos.put("campoCheckTablaF", createText(pdfDocument, new Rectangle(92, 667, 12, 11), "nameCheckTablaF", ""));
-        camposPaginaDos.put("campoCheckTablaG", createText(pdfDocument, new Rectangle(232, 667, 12, 11), "nameCheckTablaG", ""));
-        camposPaginaDos.put("campoAM", createText(pdfDocument, new Rectangle(432, 632, 100, 27), "nameAM", ""));
-        camposPaginaDos.put("campoAN", createText(pdfDocument, new Rectangle(432, 608, 100, 27), "nameAN", ""));
-        camposPaginaDos.put("campoAO", createText(pdfDocument, new Rectangle(432, 584, 100, 27), "nameAO", ""));
-        camposPaginaDos.put("campoAP", createText(pdfDocument, new Rectangle(432, 565, 100, 20), "nameAP", ""));
-        camposPaginaDos.put("campoAQ", createText(pdfDocument, new Rectangle(432, 545, 100, 20), "nameAQ", ""));
-        camposPaginaDos.put("campoAR", createText(pdfDocument, new Rectangle(432, 526, 100, 20), "nameAR", ""));
-        camposPaginaDos.put("campoAS", createText(pdfDocument, new Rectangle(432, 508, 100, 20), "nameAS", ""));
-        camposPaginaDos.put("campoAT", createText(pdfDocument, new Rectangle(432, 488, 100, 20), "nameAT", ""));
-        camposPaginaDos.put("campoAU", createText(pdfDocument, new Rectangle(439, 330, 80, 26), "nameAU", ""));
-        camposPaginaDos.put("campoAV", createText(pdfDocument, new Rectangle(439, 310, 80, 22), "nameAV", ""));
-        camposPaginaDos.put("campoAW", createText(pdfDocument, new Rectangle(439, 292, 80, 22), "nameAW", ""));
-        camposPaginaDos.put("campoAX", createText(pdfDocument, new Rectangle(439, 273, 80, 22), "nameAX", ""));
-        camposPaginaDos.put("campoAY", createText(pdfDocument, new Rectangle(439, 252, 80, 22), "nameAY", ""));
+        camposPaginaDos.put("volumenTanque", createText(pdfDocument, new Rectangle(432, 703, 100, 22), "volumenTanque", ""));
+        camposPaginaDos.put("volumenTanqueIncendios", createText(pdfDocument, new Rectangle(432, 657, 100, 50), "volumenTanqueIncendios", ""));
+        camposPaginaDos.put("sistemaExclusivo", createText(pdfDocument, new Rectangle(92, 667, 12, 11), "sistemaExclusivo", ""));
+        camposPaginaDos.put("sistemaMixto", createText(pdfDocument, new Rectangle(232, 667, 12, 11), "sistemaMixto", ""));
+        camposPaginaDos.put("cantidadCanillas", createText(pdfDocument, new Rectangle(432, 632, 100, 27), "cantidadCanillas", ""));
+        camposPaginaDos.put("cantidadInodoros", createText(pdfDocument, new Rectangle(432, 608, 100, 27), "cantidadInodoros", ""));
+        camposPaginaDos.put("caudalConsumo", createText(pdfDocument, new Rectangle(432, 584, 100, 27), "caudalConsumo", ""));
+        camposPaginaDos.put("caudalVolcamiento", createText(pdfDocument, new Rectangle(432, 565, 100, 20), "caudalVolcamiento", ""));
+        camposPaginaDos.put("cantidadConexionesAgua", createText(pdfDocument, new Rectangle(432, 545, 100, 20), "cantidadConexionesAgua", ""));
+        camposPaginaDos.put("cantidadHabitantes", createText(pdfDocument, new Rectangle(432, 526, 100, 20), "cantidadHabitantes", ""));
+        camposPaginaDos.put("cantidadConexionesCloaca", createText(pdfDocument, new Rectangle(432, 508, 100, 20), "cantidadConexionesCloaca", ""));
+        camposPaginaDos.put("numeroCuentaContrato", createText(pdfDocument, new Rectangle(432, 488, 100, 20), "numeroCuentaContrato", ""));
+        camposPaginaDos.put("planoOCroquis", createText(pdfDocument, new Rectangle(439, 330, 80, 26), "planoOCroquis", ""));
+        camposPaginaDos.put("fotocopiaTituloPropiedad", createText(pdfDocument, new Rectangle(439, 310, 80, 22), "fotocopiaTituloPropiedad", ""));
+        camposPaginaDos.put("fotocopiaDni", createText(pdfDocument, new Rectangle(439, 292, 80, 22), "fotocopiaDni", ""));
+        camposPaginaDos.put("fotocopiaPoderHabilitante", createText(pdfDocument, new Rectangle(439, 273, 80, 22), "fotocopiaPoderHabilitante", ""));
+        camposPaginaDos.put("fotocopiaUltimaFacturaServicioAysa", createText(pdfDocument, new Rectangle(439, 252, 80, 22), "fotocopiaUltimaFacturaServicioAysa", ""));
 
         camposPaginaDos
                 .keySet()
@@ -117,14 +116,14 @@ public class FormularioPdf {
                 });
 
         Map<String, PdfTextFormField> camposPaginaTres = new HashMap<>();
-        camposPaginaTres.put("campoAZ", createText(pdfDocument, new Rectangle(325, 278, 179, 22), "nameAY", ""));
-        camposPaginaTres.put("campoBA", createText(pdfDocument, new Rectangle(91, 278, 179, 22), "nameBA", ""));
-        camposPaginaTres.put("campoBB", createText(pdfDocument, new Rectangle(200, 208, 115, 22), "nameBB", ""));
-        camposPaginaTres.put("campoBC", createText(pdfDocument, new Rectangle(251, 185, 140, 22), "nameBC", ""));
-        camposPaginaTres.put("campoBD", createText(pdfDocument, new Rectangle(186, 597, 245, 22), "nameBD", ""));
-        camposPaginaTres.put("campoBE", createText(pdfDocument, new Rectangle(186, 372, 245, 22), "nameBE", ""));
-        camposPaginaTres.put("campoBF", createText(pdfDocument, new Rectangle(50, 480, 225, 22), "nameBF", ""));
-        camposPaginaTres.put("campoBG", createText(pdfDocument, new Rectangle(350, 480, 225, 22), "nameBG", ""));
+        camposPaginaTres.put("responsableAtu", createText(pdfDocument, new Rectangle(325, 278, 179, 22), "nameAY", ""));
+        camposPaginaTres.put("FirmaSolicitante", createText(pdfDocument, new Rectangle(91, 278, 179, 22), "nameBA", ""));
+        camposPaginaTres.put("telefonoContacto", createText(pdfDocument, new Rectangle(200, 208, 115, 22), "nameBB", ""));
+        camposPaginaTres.put("mailContacto", createText(pdfDocument, new Rectangle(251, 185, 140, 22), "nameBC", ""));
+        camposPaginaTres.put("calleSuperior", createText(pdfDocument, new Rectangle(186, 597, 245, 22), "nameBD", ""));
+        camposPaginaTres.put("calleInferior", createText(pdfDocument, new Rectangle(186, 372, 245, 22), "nameBE", ""));
+        camposPaginaTres.put("calleIzquierda", createText(pdfDocument, new Rectangle(50, 480, 225, 22), "nameBF", ""));
+        camposPaginaTres.put("calleDerecha", createText(pdfDocument, new Rectangle(350, 480, 225, 22), "nameBG", ""));
 
         camposPaginaTres
                 .keySet()
@@ -147,19 +146,89 @@ public class FormularioPdf {
         PdfWriter writer = new PdfWriter(DESTINATION_CON_VALORES);
         PdfDocument pdfDocument = new PdfDocument(reader, writer);
         agregarValores(pdfDocument);
-        
+
         Document document = new Document(pdfDocument);
         document.close();
     }
 
     private static void agregarValores(PdfDocument pdfDocument) {
         // para ver todos los campos del formulario
-        PdfAcroForm.getAcroForm(pdfDocument,false).getFormFields();
-        
-        
+        PdfAcroForm.getAcroForm(pdfDocument, false).getFormFields();
+
         // para setearle un valor
-        PdfAcroForm.getAcroForm(pdfDocument, false)
-               .getField("campoCheckTablaG").setValue("X");
+        Map<String, String> campoConValor = new HashMap<>();
+        campoConValor.put("fechaDiaMes", "12 de Agosto");
+        campoConValor.put("fechaAnio", "2024");
+        campoConValor.put("suscriptorNombre", "La mejor empresa constructora");
+        campoConValor.put("suscriptorDni", "112233445566");
+        campoConValor.put("direccionDomicilio", "Calle Falsa");
+        campoConValor.put("direccionNumero", "123");
+        campoConValor.put("direccionPiso", "5");
+        campoConValor.put("direccionDepartamento", "8B");
+        campoConValor.put("direccionLocalidad", "Lomas de Zamora");
+        campoConValor.put("direccionCodigoPostal", "1832");
+        campoConValor.put("telefono", "1122332211");
+        campoConValor.put("mail", "unemaildealguien@gmail.com");
+        campoConValor.put("caracterPropietario", "X");
+        campoConValor.put("caracterApoderado", "X");
+        campoConValor.put("factibilidadAgua", "X");
+        campoConValor.put("factibilidadCloaca", "X");
+        campoConValor.put("factibilidadAmpliacion", "X");
+        campoConValor.put("factibilidadRenovacion", "X");
+        campoConValor.put("predioCalle", "La calle nueva");
+        campoConValor.put("predioNumero", "9999");
+        campoConValor.put("predioLocalidad", "Una localidad");
+        campoConValor.put("predioPartido", "Un partido");
+        campoConValor.put("catastroCirc", "CIRC");
+        campoConValor.put("catastroSec", "SEC");
+        campoConValor.put("catastroMz", "UU");
+        campoConValor.put("catastroParcela", "PARCELA");
+        campoConValor.put("codigoZonificacion", "R2all");
+        campoConValor.put("tiempoEstimadoEjecucionObra", "7 años");
+        campoConValor.put("destinoObra", "Escuela de Mutantes");
+        campoConValor.put("superficieTotalCubierta", "67 km cuadrados");
+        campoConValor.put("superficieTotalCubiertaComplejoGlobal", "X");
+        campoConValor.put("superficieTotalCubiertaCantidadTorres", "X");
+        campoConValor.put("superficieTotalCubiertaCantidadTorresNumero", "84");
+        campoConValor.put("superficieTotalCubiertaTorre", "X");
+        campoConValor.put("superficieTotalCubiertaTorreNumero", "44");
+        campoConValor.put("cantidadUnidadesFuncionales", "999");
+        campoConValor.put("alturaEdificioSobreRasante", "1999 metros");
+        campoConValor.put("volumenTotalReservaSanitaria", "899 litros");
+        campoConValor.put("volumenContraIncendio", "8777 litros");
+
+        // página 2
+        campoConValor.put("volumenTanque", "1999 litros");
+        campoConValor.put("volumenTanqueIncendios", "899 litros");
+        campoConValor.put("sistemaExclusivo", "X");
+        campoConValor.put("sistemaMixto", "X");
+        campoConValor.put("cantidadCanillas", "879");
+        campoConValor.put("cantidadInodoros", "877");
+        campoConValor.put("caudalConsumo", "877 litros");
+        campoConValor.put("caudalVolcamiento", "877 litros");
+        campoConValor.put("cantidadConexionesAgua", "877");
+        campoConValor.put("cantidadHabitantes", "8777");
+        campoConValor.put("cantidadConexionesCloaca", "87");
+        campoConValor.put("numeroCuentaContrato", "87779897767");
+
+        // página 3
+        campoConValor.put("calleSuperior", "Nombre de la calle superior");
+        campoConValor.put("calleIzquierda", "Nombre de la calle izquierda");
+        campoConValor.put("calleDerecha", "Nombre de la calle derecha");
+        campoConValor.put("calleInferior", "Nombre de la calle inferior");
+        campoConValor.put("telefonoContacto", "7878979797");
+        campoConValor.put("mailContacto", "contacto@gmail.com");
+
+        campoConValor
+                .keySet()
+                .forEach(claveCampoConValor -> {
+                    PdfAcroForm
+                            .getAcroForm(pdfDocument, false)
+                            .getField(claveCampoConValor)
+                            .setValue(campoConValor.get(claveCampoConValor));
+
+                });
+
     }
 
 }
