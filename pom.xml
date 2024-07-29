@@ -6,7 +6,7 @@
     <artifactId>demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Proyecto para hacer pruebas de conceptos en las branches, no en main</description>
     <url/>
     <licenses>
         <license/>
@@ -23,26 +23,5 @@
     <properties>
         <java.version>17</java.version>
     </properties>
-    <dependencies>
-        
-        <dependency>
-            <groupId>com.lowagie</groupId>
-            <artifactId>itext</artifactId>
-            <version>4.2.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.itextpdf</groupId>
-            <artifactId>itext7-core</artifactId>
-            <version>7.2.3</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>com.itextpdf</groupId>
-            <artifactId>cleanup</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-       
-    </dependencies>
 
 </project>
