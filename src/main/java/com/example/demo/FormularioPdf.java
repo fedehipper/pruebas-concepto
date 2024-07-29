@@ -7,12 +7,13 @@ import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
 import static com.itextpdf.forms.fields.PdfFormField.createText;
 import com.itextpdf.forms.fields.PdfTextFormField;
+import com.itextpdf.kernel.colors.WebColors;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
+
 import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.text.pdf.parser.Matrix;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -77,7 +78,7 @@ public class FormularioPdf {
                 .forEach(key -> {
                     PdfFormField formField = PdfFormField.createEmptyField(pdfDocument);
                     formField.setFieldName(key);
-                    formField.setFontSize(10);
+                    formField.setFontSizeAutoScale();
                     PdfTextFormField textFormatField = camposPaginaUno.get(key);
                     formField.addKid(textFormatField);
                     PdfAcroForm.getAcroForm(pdfDocument, true)
@@ -108,7 +109,7 @@ public class FormularioPdf {
                 .forEach(key -> {
                     PdfFormField formField = PdfFormField.createEmptyField(pdfDocument);
                     formField.setFieldName(key);
-                    formField.setFontSize(10);
+                    formField.setFontSizeAutoScale();
                     PdfTextFormField textFormatField = camposPaginaDos.get(key);
                     formField.addKid(textFormatField);
                     PdfAcroForm.getAcroForm(pdfDocument, true)
@@ -120,18 +121,53 @@ public class FormularioPdf {
         camposPaginaTres.put("FirmaSolicitante", createText(pdfDocument, new Rectangle(91, 278, 179, 22), "nameBA", ""));
         camposPaginaTres.put("telefonoContacto", createText(pdfDocument, new Rectangle(200, 208, 115, 22), "nameBB", ""));
         camposPaginaTres.put("mailContacto", createText(pdfDocument, new Rectangle(251, 185, 140, 22), "nameBC", ""));
-        camposPaginaTres.put("calleSuperior", createText(pdfDocument, new Rectangle(186, 597, 245, 22), "nameBD", ""));
-        camposPaginaTres.put("calleInferior", createText(pdfDocument, new Rectangle(186, 372, 245, 22), "nameBE", ""));
-        camposPaginaTres.put("calleIzquierda", createText(pdfDocument, new Rectangle(50, 480, 225, 22), "nameBF", ""));
-        camposPaginaTres.put("calleDerecha", createText(pdfDocument, new Rectangle(350, 480, 225, 22), "nameBG", ""));
+        camposPaginaTres.put("calleSuperior", createText(pdfDocument, new Rectangle(186, 597, 245, 15), "nameBD", ""));
+        camposPaginaTres.put("calleInferior", createText(pdfDocument, new Rectangle(186, 372, 245, 15), "nameBE", ""));
+        camposPaginaTres.put("calleIzquierda", createText(pdfDocument, new Rectangle(0, 480, 150, 15), "nameBF", ""));
+        camposPaginaTres.put("calleDerecha", createText(pdfDocument, new Rectangle(430, 480, 150, 15), "nameBG", ""));
 
         camposPaginaTres
                 .keySet()
                 .forEach(key -> {
                     PdfFormField formField = PdfFormField.createEmptyField(pdfDocument);
                     formField.setFieldName(key);
-                    formField.setFontSize(10);
+                    formField.setFontSizeAutoScale();
                     PdfTextFormField textFormatField = camposPaginaTres.get(key);
+                    formField.addKid(textFormatField);
+                    PdfAcroForm.getAcroForm(pdfDocument, true)
+                            .addField(formField, pdfDocument.getPage(3));
+                });
+
+        Map<String, PdfTextFormField> camposRectanguloUbicacionObra = new HashMap<>();
+        camposRectanguloUbicacionObra.put("calleSuperiorA", createText(pdfDocument, new Rectangle(200, 550, 22, 22), "calleSuperiorA", ""));
+        camposRectanguloUbicacionObra.put("calleSuperiorB", createText(pdfDocument, new Rectangle(250, 550, 22, 22), "calleSuperiorB", ""));
+        camposRectanguloUbicacionObra.put("calleSuperiorC", createText(pdfDocument, new Rectangle(300, 550, 22, 22), "calleSuperiorC", ""));
+        camposRectanguloUbicacionObra.put("calleSuperiorD", createText(pdfDocument, new Rectangle(350, 550, 22, 22), "calleSuperiorD", ""));
+        camposRectanguloUbicacionObra.put("calleSuperiorE", createText(pdfDocument, new Rectangle(400, 550, 22, 22), "calleSuperiorE", ""));
+
+        camposRectanguloUbicacionObra.put("calleDerechaA", createText(pdfDocument, new Rectangle(400, 515, 22, 22), "calleDerechaA", ""));
+        camposRectanguloUbicacionObra.put("calleDerechaB", createText(pdfDocument, new Rectangle(400, 480, 22, 22), "calleDerechaB", ""));
+        camposRectanguloUbicacionObra.put("calleDerechaC", createText(pdfDocument, new Rectangle(400, 445, 22, 22), "calleDerechaC", ""));
+
+        camposRectanguloUbicacionObra.put("calleIzquierdaA", createText(pdfDocument, new Rectangle(200, 515, 22, 22), "calleIzquierdaA", ""));
+        camposRectanguloUbicacionObra.put("calleIzquierdaB", createText(pdfDocument, new Rectangle(200, 480, 22, 22), "calleIzquierdaB", ""));
+        camposRectanguloUbicacionObra.put("calleIzquierdaC", createText(pdfDocument, new Rectangle(200, 445, 22, 22), "calleIzquierdaC", ""));
+
+        camposRectanguloUbicacionObra.put("calleInferiorA", createText(pdfDocument, new Rectangle( 200, 410, 22, 22), "calleInferiorA", ""));
+        camposRectanguloUbicacionObra.put("calleInferiorB", createText(pdfDocument, new Rectangle( 250, 410, 22, 22), "calleInferiorB", ""));
+        camposRectanguloUbicacionObra.put("calleInferiorC", createText(pdfDocument, new Rectangle( 300, 410, 22, 22), "calleInferiorC", ""));
+        camposRectanguloUbicacionObra.put("calleInferiorD", createText(pdfDocument, new Rectangle( 350, 410, 22, 22), "calleInferiorD", ""));
+        camposRectanguloUbicacionObra.put("calleInferiorE", createText(pdfDocument, new Rectangle( 400, 410, 22, 22), "calleInferiorE", ""));
+
+        camposRectanguloUbicacionObra
+                .keySet()
+                .forEach(key -> {
+                    PdfFormField formField = PdfFormField.createEmptyField(pdfDocument);
+                    formField.setFieldName(key);
+                    formField.setFontSizeAutoScale();
+                    formField.setColor(WebColors.getRGBColor("#263a71"));
+
+                    PdfTextFormField textFormatField = camposRectanguloUbicacionObra.get(key);
                     formField.addKid(textFormatField);
                     PdfAcroForm.getAcroForm(pdfDocument, true)
                             .addField(formField, pdfDocument.getPage(3));
@@ -218,6 +254,24 @@ public class FormularioPdf {
         campoConValor.put("calleInferior", "Nombre de la calle inferior");
         campoConValor.put("telefonoContacto", "7878979797");
         campoConValor.put("mailContacto", "contacto@gmail.com");
+
+        // cuadro obra
+        campoConValor.put("calleSuperiorA", "X");
+        campoConValor.put("calleSuperiorB", "X");
+        campoConValor.put("calleSuperiorC", "X");
+        campoConValor.put("calleSuperiorD", "X");
+        campoConValor.put("calleSuperiorE", "X");
+        campoConValor.put("calleDerechaA", "X");
+        campoConValor.put("calleDerechaB", "X");
+        campoConValor.put("calleDerechaC", "X");
+        campoConValor.put("calleIzquierdaA", "X");
+        campoConValor.put("calleIzquierdaB", "X");
+        campoConValor.put("calleIzquierdaC", "X");
+        campoConValor.put("calleInferiorA", "X");
+        campoConValor.put("calleInferiorB", "X");
+        campoConValor.put("calleInferiorC", "X");
+        campoConValor.put("calleInferiorD", "X");
+        campoConValor.put("calleInferiorE", "X");
 
         campoConValor
                 .keySet()
