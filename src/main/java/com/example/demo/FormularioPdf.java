@@ -153,11 +153,11 @@ public class FormularioPdf {
         camposRectanguloUbicacionObra.put("calleIzquierdaB", createText(pdfDocument, new Rectangle(200, 480, 22, 22), "calleIzquierdaB", ""));
         camposRectanguloUbicacionObra.put("calleIzquierdaC", createText(pdfDocument, new Rectangle(200, 445, 22, 22), "calleIzquierdaC", ""));
 
-        camposRectanguloUbicacionObra.put("calleInferiorA", createText(pdfDocument, new Rectangle( 200, 410, 22, 22), "calleInferiorA", ""));
-        camposRectanguloUbicacionObra.put("calleInferiorB", createText(pdfDocument, new Rectangle( 250, 410, 22, 22), "calleInferiorB", ""));
-        camposRectanguloUbicacionObra.put("calleInferiorC", createText(pdfDocument, new Rectangle( 300, 410, 22, 22), "calleInferiorC", ""));
-        camposRectanguloUbicacionObra.put("calleInferiorD", createText(pdfDocument, new Rectangle( 350, 410, 22, 22), "calleInferiorD", ""));
-        camposRectanguloUbicacionObra.put("calleInferiorE", createText(pdfDocument, new Rectangle( 400, 410, 22, 22), "calleInferiorE", ""));
+        camposRectanguloUbicacionObra.put("calleInferiorA", createText(pdfDocument, new Rectangle(200, 410, 22, 22), "calleInferiorA", ""));
+        camposRectanguloUbicacionObra.put("calleInferiorB", createText(pdfDocument, new Rectangle(250, 410, 22, 22), "calleInferiorB", ""));
+        camposRectanguloUbicacionObra.put("calleInferiorC", createText(pdfDocument, new Rectangle(300, 410, 22, 22), "calleInferiorC", ""));
+        camposRectanguloUbicacionObra.put("calleInferiorD", createText(pdfDocument, new Rectangle(350, 410, 22, 22), "calleInferiorD", ""));
+        camposRectanguloUbicacionObra.put("calleInferiorE", createText(pdfDocument, new Rectangle(400, 410, 22, 22), "calleInferiorE", ""));
 
         camposRectanguloUbicacionObra
                 .keySet()
@@ -220,7 +220,7 @@ public class FormularioPdf {
         campoConValor.put("catastroMz", "UU");
         campoConValor.put("catastroParcela", "PARCELA");
         campoConValor.put("codigoZonificacion", "R2all");
-        campoConValor.put("tiempoEstimadoEjecucionObra", "7 años");
+        campoConValor.put("tiempoEstimadoEjecucionObra", "7 a�os");
         campoConValor.put("destinoObra", "Escuela de Mutantes");
         campoConValor.put("superficieTotalCubierta", "67 km cuadrados");
         campoConValor.put("superficieTotalCubiertaComplejoGlobal", "X");
@@ -233,7 +233,7 @@ public class FormularioPdf {
         campoConValor.put("volumenTotalReservaSanitaria", "899 litros");
         campoConValor.put("volumenContraIncendio", "8777 litros");
 
-        // página 2
+        // pagina 2
         campoConValor.put("volumenTanque", "1999 litros");
         campoConValor.put("volumenTanqueIncendios", "899 litros");
         campoConValor.put("sistemaExclusivo", "X");
@@ -247,7 +247,7 @@ public class FormularioPdf {
         campoConValor.put("cantidadConexionesCloaca", "87");
         campoConValor.put("numeroCuentaContrato", "87779897767");
 
-        // página 3
+        // pagina 3
         campoConValor.put("calleSuperior", "Nombre de la calle superior");
         campoConValor.put("calleIzquierda", "Nombre de la calle izquierda");
         campoConValor.put("calleDerecha", "Nombre de la calle derecha");
@@ -273,15 +273,18 @@ public class FormularioPdf {
         campoConValor.put("calleInferiorD", "X");
         campoConValor.put("calleInferiorE", "X");
 
+        PdfAcroForm acroForm = PdfAcroForm.getAcroForm(pdfDocument, true);
         campoConValor
                 .keySet()
                 .forEach(claveCampoConValor -> {
-                    PdfAcroForm
-                            .getAcroForm(pdfDocument, false)
+                    acroForm
                             .getField(claveCampoConValor)
                             .setValue(campoConValor.get(claveCampoConValor));
-
                 });
+
+        acroForm.flattenFields();
+
+        pdfDocument.close();
 
     }
 
