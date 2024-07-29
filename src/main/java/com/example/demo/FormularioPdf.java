@@ -283,7 +283,6 @@ public class FormularioPdf {
                 });
 
         acroForm.flattenFields();
-
         pdfDocument.close();
 
     }
