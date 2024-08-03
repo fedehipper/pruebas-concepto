@@ -7,7 +7,7 @@ import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
 import static com.itextpdf.forms.fields.PdfFormField.createText;
 import com.itextpdf.forms.fields.PdfTextFormField;
-import com.itextpdf.kernel.colors.WebColors;
+import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 
@@ -38,7 +38,7 @@ public class FormularioPdf {
         camposPaginaUno.put("suscriptorNombre", createText(pdfDocument, new Rectangle(227, 616, 215, 11), "suscriptorNombre", ""));
         camposPaginaUno.put("suscriptorDni", createText(pdfDocument, new Rectangle(92, 597, 114, 11), "suscriptorDni", ""));
         camposPaginaUno.put("direccionDomicilio", createText(pdfDocument, new Rectangle(174, 580, 164, 11), "direccionDomicilio", ""));
-        camposPaginaUno.put("direccionNumero", createText(pdfDocument, new Rectangle(355, 580, 35, 11), "direccionNumero", ""));
+        camposPaginaUno.put("direccionNumero", createText(pdfDocument, new Rectangle(355, 580, 35, 9), "direccionNumero", ""));
         camposPaginaUno.put("direccionPiso", createText(pdfDocument, new Rectangle(414, 580, 23, 11), "direccionPiso", ""));
         camposPaginaUno.put("direccionDepartamento", createText(pdfDocument, new Rectangle(470, 580, 50, 11), "direccionDepartamento", ""));
         camposPaginaUno.put("direccionLocalidad", createText(pdfDocument, new Rectangle(136, 563, 84, 11), "direccionLocalidad", ""));
@@ -55,10 +55,10 @@ public class FormularioPdf {
         camposPaginaUno.put("predioNumero", createText(pdfDocument, new Rectangle(369, 437, 32, 11), "predioNumero", ""));
         camposPaginaUno.put("predioLocalidad", createText(pdfDocument, new Rectangle(451, 437, 68, 11), "predioLocalidad", ""));
         camposPaginaUno.put("predioPartido", createText(pdfDocument, new Rectangle(159, 418, 65, 11), "predioPartido", ""));
-        camposPaginaUno.put("catastroCirc", createText(pdfDocument, new Rectangle(88, 401, 19, 8), "catastroCirc", ""));
-        camposPaginaUno.put("catastroSec", createText(pdfDocument, new Rectangle(124, 401, 19, 8), "catastroSec", ""));
+        camposPaginaUno.put("catastroCirc", createText(pdfDocument, new Rectangle(88, 401, 20, 8), "catastroCirc", ""));
+        camposPaginaUno.put("catastroSec", createText(pdfDocument, new Rectangle(126, 401, 20, 8), "catastroSec", ""));
         camposPaginaUno.put("catastroMz", createText(pdfDocument, new Rectangle(155, 401, 26, 8), "catastroMz", ""));
-        camposPaginaUno.put("catastroParcela", createText(pdfDocument, new Rectangle(231, 401, 25, 11), "catastroParcela", ""));
+        camposPaginaUno.put("catastroParcela", createText(pdfDocument, new Rectangle(229, 401, 27, 8), "catastroParcela", ""));
         camposPaginaUno.put("codigoZonificacion", createText(pdfDocument, new Rectangle(433, 250, 100, 22), "codigoZonificacion", ""));
         camposPaginaUno.put("tiempoEstimadoEjecucionObra", createText(pdfDocument, new Rectangle(433, 231, 100, 22), "tiempoEstimadoEjecucionObra", ""));
         camposPaginaUno.put("destinoObra", createText(pdfDocument, new Rectangle(433, 212, 100, 22), "destinoObra", ""));
@@ -78,8 +78,9 @@ public class FormularioPdf {
                 .forEach(key -> {
                     PdfFormField formField = PdfFormField.createEmptyField(pdfDocument);
                     formField.setFieldName(key);
-                    formField.setFontSizeAutoScale();
                     PdfTextFormField textFormatField = camposPaginaUno.get(key);
+                    textFormatField.setFontSizeAutoScale();
+                    textFormatField.setColor(ColorConstants.BLUE);
                     formField.addKid(textFormatField);
                     PdfAcroForm.getAcroForm(pdfDocument, true)
                             .addField(formField, pdfDocument.getPage(1));
@@ -109,8 +110,9 @@ public class FormularioPdf {
                 .forEach(key -> {
                     PdfFormField formField = PdfFormField.createEmptyField(pdfDocument);
                     formField.setFieldName(key);
-                    formField.setFontSizeAutoScale();
                     PdfTextFormField textFormatField = camposPaginaDos.get(key);
+                    textFormatField.setFontSizeAutoScale();
+                    textFormatField.setColor(ColorConstants.BLUE);
                     formField.addKid(textFormatField);
                     PdfAcroForm.getAcroForm(pdfDocument, true)
                             .addField(formField, pdfDocument.getPage(2));
@@ -131,8 +133,9 @@ public class FormularioPdf {
                 .forEach(key -> {
                     PdfFormField formField = PdfFormField.createEmptyField(pdfDocument);
                     formField.setFieldName(key);
-                    formField.setFontSizeAutoScale();
                     PdfTextFormField textFormatField = camposPaginaTres.get(key);
+                    textFormatField.setFontSizeAutoScale();
+                    textFormatField.setColor(ColorConstants.BLUE);
                     formField.addKid(textFormatField);
                     PdfAcroForm.getAcroForm(pdfDocument, true)
                             .addField(formField, pdfDocument.getPage(3));
@@ -164,10 +167,9 @@ public class FormularioPdf {
                 .forEach(key -> {
                     PdfFormField formField = PdfFormField.createEmptyField(pdfDocument);
                     formField.setFieldName(key);
-                    formField.setFontSizeAutoScale();
-                    formField.setColor(WebColors.getRGBColor("#263a71"));
-
                     PdfTextFormField textFormatField = camposRectanguloUbicacionObra.get(key);
+                    textFormatField.setFontSizeAutoScale();
+                    textFormatField.setColor(ColorConstants.BLUE);
                     formField.addKid(textFormatField);
                     PdfAcroForm.getAcroForm(pdfDocument, true)
                             .addField(formField, pdfDocument.getPage(3));
@@ -220,7 +222,7 @@ public class FormularioPdf {
         campoConValor.put("catastroMz", "UU");
         campoConValor.put("catastroParcela", "PARCELA");
         campoConValor.put("codigoZonificacion", "R2all");
-        campoConValor.put("tiempoEstimadoEjecucionObra", "7 años");
+        campoConValor.put("tiempoEstimadoEjecucionObra", "7 anios");
         campoConValor.put("destinoObra", "Escuela de Mutantes");
         campoConValor.put("superficieTotalCubierta", "67 km cuadrados");
         campoConValor.put("superficieTotalCubiertaComplejoGlobal", "X");
