@@ -125,8 +125,8 @@ public class FormularioPdf {
         camposPaginaTres.put("mailContacto", createText(pdfDocument, new Rectangle(251, 185, 140, 22), "nameBC", ""));
         camposPaginaTres.put("calleSuperior", createText(pdfDocument, new Rectangle(186, 597, 245, 15), "nameBD", ""));
         camposPaginaTres.put("calleInferior", createText(pdfDocument, new Rectangle(186, 372, 245, 15), "nameBE", ""));
-        camposPaginaTres.put("calleIzquierda", createText(pdfDocument, new Rectangle(0, 480, 150, 15), "nameBF", ""));
-        camposPaginaTres.put("calleDerecha", createText(pdfDocument, new Rectangle(430, 480, 150, 15), "nameBG", ""));
+        camposPaginaTres.put("calleIzquierda", createText(pdfDocument, new Rectangle(140, 450, 15, 150), "nameBF", ""));
+        camposPaginaTres.put("calleDerecha", createText(pdfDocument, new Rectangle(450, 450, 15, 150), "nameBG", ""));
 
         camposPaginaTres
                 .keySet()
@@ -136,6 +136,9 @@ public class FormularioPdf {
                     PdfTextFormField textFormatField = camposPaginaTres.get(key);
                     textFormatField.setFontSizeAutoScale();
                     textFormatField.setColor(ColorConstants.BLUE);
+                    if("calleIzquierda".equals(key) || "calleDerecha".equals(key)) {
+                         textFormatField.setRotation(90);
+                    }
                     formField.addKid(textFormatField);
                     PdfAcroForm.getAcroForm(pdfDocument, true)
                             .addField(formField, pdfDocument.getPage(3));
