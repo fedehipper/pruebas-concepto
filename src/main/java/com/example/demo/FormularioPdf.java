@@ -159,7 +159,7 @@ public class FormularioPdf {
 
         // para setearle un valor
         Map<String, String> campoConValor = new HashMap<>();
-        // campoConValor.put("calle", "12 de Agosto");
+        campoConValor.put("usuario", "Un usuario");
 
         PdfAcroForm acroForm = PdfAcroForm.getAcroForm(pdfDocument, true);
         campoConValor
