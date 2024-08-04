@@ -33,121 +33,98 @@ public class FormularioPdf {
     private static void agregarFormulario(PdfDocument pdfDocument) throws MalformedURLException {
 
         Map<String, PdfTextFormField> camposPaginaUno = new HashMap<>();
-        camposPaginaUno.put("calle", createText(pdfDocument, new Rectangle(124, 646, 267, 10), "calle", ""));
-        camposPaginaUno.put("numero", createText(pdfDocument, new Rectangle(410, 646, 100, 10), "numero", ""));
-        camposPaginaUno.put("entreCalleA", createText(pdfDocument, new Rectangle(124, 632, 194, 10), "entreCalleA", ""));
-        camposPaginaUno.put("entreCalleB", createText(pdfDocument, new Rectangle(330, 632, 180, 10), "entreCalleB", ""));
-        camposPaginaUno.put("localidad", createText(pdfDocument, new Rectangle(152, 618, 235, 10), "localidad", ""));
-        camposPaginaUno.put("partido", createText(pdfDocument, new Rectangle(140, 605, 245, 10), "partido", ""));
-        camposPaginaUno.put("codigoPostal", createText(pdfDocument, new Rectangle(181, 591, 144, 10), "codigoPostal", ""));
-        camposPaginaUno.put("telefono", createText(pdfDocument, new Rectangle(351, 591, 156, 10), "telefono", ""));
+        camposPaginaUno.put("usuario", createText(pdfDocument, new Rectangle(151, 585, 380, 10), "usuario", ""));
+        camposPaginaUno.put("domicilio", createText(pdfDocument, new Rectangle(154, 569, 375, 10), "domicilio", ""));
+        camposPaginaUno.put("superficieCubierta", createText(pdfDocument, new Rectangle(184, 553, 345, 10), "superficieCubierta", ""));
+        camposPaginaUno.put("destino", createText(pdfDocument, new Rectangle(144, 537, 384, 10), "destino", ""));
+        camposPaginaUno.put("cantidadOperarios", createText(pdfDocument, new Rectangle(233, 521, 295, 10), "cantidadOperarios", ""));
 
-        camposPaginaUno.put("cantidadA", createText(pdfDocument, new Rectangle(84, 530, 73, 10), "cantidadA", ""));
-        camposPaginaUno.put("tipoArtefactoA", createText(pdfDocument, new Rectangle(155, 530, 180, 10), "tipoArtefactoA", ""));
-        camposPaginaUno.put("hpA", createText(pdfDocument, new Rectangle(333, 530, 93, 10), "hpA", ""));
-        camposPaginaUno.put("kwA", createText(pdfDocument, new Rectangle(425, 530, 85, 10), "kwA", ""));
+        camposPaginaUno.put("cantidadA", createText(pdfDocument, new Rectangle(80, 439, 58, 10), "cantidadA", ""));
+        camposPaginaUno.put("descripcionA", createText(pdfDocument, new Rectangle(142, 439, 113, 10), "descripcionA", ""));
+        camposPaginaUno.put("hpA", createText(pdfDocument, new Rectangle(257, 439, 109, 10), "hpA", ""));
+        camposPaginaUno.put("kwA", createText(pdfDocument, new Rectangle(367, 439, 160, 10), "kwA", ""));
 
-        camposPaginaUno.put("cantidadB", createText(pdfDocument, new Rectangle(84, 517, 73, 10), "cantidadB", ""));
-        camposPaginaUno.put("tipoArtefactoB", createText(pdfDocument, new Rectangle(155, 517, 180, 10), "tipoArtefactoB", ""));
-        camposPaginaUno.put("hpB", createText(pdfDocument, new Rectangle(333, 517, 93, 10), "hpB", ""));
-        camposPaginaUno.put("kwB", createText(pdfDocument, new Rectangle(425, 517, 85, 10), "kwB", ""));
+        camposPaginaUno.put("cantidadB", createText(pdfDocument, new Rectangle(80, 427, 58, 10), "cantidadB", ""));
+        camposPaginaUno.put("descripcionB", createText(pdfDocument, new Rectangle(142, 427, 113, 10), "descripcionB", ""));
+        camposPaginaUno.put("hpB", createText(pdfDocument, new Rectangle(257, 427, 109, 10), "hpB", ""));
+        camposPaginaUno.put("kwB", createText(pdfDocument, new Rectangle(367, 427, 160, 10), "kwB", ""));
 
-        camposPaginaUno.put("cantidadC", createText(pdfDocument, new Rectangle(84, 504, 73, 10), "cantidadC", ""));
-        camposPaginaUno.put("tipoArtefactoC", createText(pdfDocument, new Rectangle(155, 504, 180, 10), "tipoArtefactoC", ""));
-        camposPaginaUno.put("hpC", createText(pdfDocument, new Rectangle(333, 504, 93, 10), "hpC", ""));
-        camposPaginaUno.put("kwC", createText(pdfDocument, new Rectangle(425, 504, 85, 10), "kwC", ""));
+        camposPaginaUno.put("cantidadC", createText(pdfDocument, new Rectangle(80, 416, 58, 10), "cantidadC", ""));
+        camposPaginaUno.put("descripcionC", createText(pdfDocument, new Rectangle(142, 416, 113, 10), "descripcionC", ""));
+        camposPaginaUno.put("hpC", createText(pdfDocument, new Rectangle(257, 416, 109, 10), "hpC", ""));
+        camposPaginaUno.put("kwC", createText(pdfDocument, new Rectangle(367, 416, 160, 10), "kwC", ""));
 
-        camposPaginaUno.put("cantidadD", createText(pdfDocument, new Rectangle(84, 491, 73, 10), "cantidadD", ""));
-        camposPaginaUno.put("tipoArtefactoD", createText(pdfDocument, new Rectangle(155, 491, 180, 10), "tipoArtefactoD", ""));
-        camposPaginaUno.put("hpD", createText(pdfDocument, new Rectangle(333, 491, 93, 10), "hpD", ""));
-        camposPaginaUno.put("kwD", createText(pdfDocument, new Rectangle(425, 491, 85, 10), "kwD", ""));
+        camposPaginaUno.put("cantidadD", createText(pdfDocument, new Rectangle(80, 405, 58, 10), "cantidadD", ""));
+        camposPaginaUno.put("descripcionD", createText(pdfDocument, new Rectangle(142, 405, 113, 10), "descripcionD", ""));
+        camposPaginaUno.put("hpD", createText(pdfDocument, new Rectangle(257, 405, 109, 10), "hpD", ""));
+        camposPaginaUno.put("kwD", createText(pdfDocument, new Rectangle(367, 405, 160, 10), "kwD", ""));
 
-        camposPaginaUno.put("cantidadE", createText(pdfDocument, new Rectangle(84, 478, 73, 10), "cantidadE", ""));
-        camposPaginaUno.put("tipoArtefactoE", createText(pdfDocument, new Rectangle(155, 478, 180, 10), "tipoArtefactoE", ""));
-        camposPaginaUno.put("hpE", createText(pdfDocument, new Rectangle(333, 478, 93, 10), "hpE", ""));
-        camposPaginaUno.put("kwE", createText(pdfDocument, new Rectangle(425, 478, 85, 10), "kwE", ""));
+        camposPaginaUno.put("cantidadE", createText(pdfDocument, new Rectangle(80, 394, 58, 10), "cantidadE", ""));
+        camposPaginaUno.put("descripcionE", createText(pdfDocument, new Rectangle(142, 394, 113, 10), "descripcionE", ""));
+        camposPaginaUno.put("hpE", createText(pdfDocument, new Rectangle(257, 394, 109, 10), "hpE", ""));
+        camposPaginaUno.put("kwE", createText(pdfDocument, new Rectangle(367, 394, 160, 10), "kwE", ""));
 
-        camposPaginaUno.put("cantidadF", createText(pdfDocument, new Rectangle(84, 517, 73, 10), "cantidadF", ""));
-        camposPaginaUno.put("tipoArtefactoF", createText(pdfDocument, new Rectangle(155, 517, 180, 10), "tipoArtefactoF", ""));
-        camposPaginaUno.put("hpF", createText(pdfDocument, new Rectangle(333, 517, 93, 10), "hpF", ""));
-        camposPaginaUno.put("kwF", createText(pdfDocument, new Rectangle(425, 517, 85, 10), "kwF", ""));
+        camposPaginaUno.put("cantidadF", createText(pdfDocument, new Rectangle(80, 383, 58, 10), "cantidadF", ""));
+        camposPaginaUno.put("descripcionF", createText(pdfDocument, new Rectangle(142, 383, 113, 10), "descripcionF", ""));
+        camposPaginaUno.put("hpF", createText(pdfDocument, new Rectangle(257, 383, 109, 10), "hpF", ""));
+        camposPaginaUno.put("kwF", createText(pdfDocument, new Rectangle(367, 383, 160, 10), "kwF", ""));
 
-        camposPaginaUno.put("cantidadG", createText(pdfDocument, new Rectangle(84, 465, 73, 10), "cantidadG", ""));
-        camposPaginaUno.put("tipoArtefactoG", createText(pdfDocument, new Rectangle(155, 465, 180, 10), "tipoArtefactoG", ""));
-        camposPaginaUno.put("hpG", createText(pdfDocument, new Rectangle(333, 465, 93, 10), "hpG", ""));
-        camposPaginaUno.put("kwG", createText(pdfDocument, new Rectangle(425, 465, 85, 10), "kwG", ""));
+        camposPaginaUno.put("cantidadG", createText(pdfDocument, new Rectangle(80, 372, 58, 10), "cantidadG", ""));
+        camposPaginaUno.put("descripcionG", createText(pdfDocument, new Rectangle(142, 372, 113, 10), "descripcionG", ""));
+        camposPaginaUno.put("hpG", createText(pdfDocument, new Rectangle(257, 372, 109, 10), "hpG", ""));
+        camposPaginaUno.put("kwG", createText(pdfDocument, new Rectangle(367, 372, 160, 10), "kwG", ""));
 
-        camposPaginaUno.put("cantidadH", createText(pdfDocument, new Rectangle(84, 452, 73, 10), "cantidadH", ""));
-        camposPaginaUno.put("tipoArtefactoH", createText(pdfDocument, new Rectangle(155, 452, 180, 10), "tipoArtefactoH", ""));
-        camposPaginaUno.put("hpH", createText(pdfDocument, new Rectangle(333, 452, 93, 10), "hpH", ""));
-        camposPaginaUno.put("kwH", createText(pdfDocument, new Rectangle(425, 452, 85, 10), "kwH", ""));
+        camposPaginaUno.put("cantidadH", createText(pdfDocument, new Rectangle(80, 361, 58, 10), "cantidadH", ""));
+        camposPaginaUno.put("descripcionH", createText(pdfDocument, new Rectangle(142, 361, 113, 10), "descripcionH", ""));
+        camposPaginaUno.put("hpH", createText(pdfDocument, new Rectangle(257, 361, 109, 10), "hpH", ""));
+        camposPaginaUno.put("kwH", createText(pdfDocument, new Rectangle(367, 361, 160, 10), "kwH", ""));
 
-        camposPaginaUno.put("cantidadI", createText(pdfDocument, new Rectangle(84, 439, 73, 10), "cantidadI", ""));
-        camposPaginaUno.put("tipoArtefactoI", createText(pdfDocument, new Rectangle(155, 439, 180, 10), "tipoArtefactoI", ""));
-        camposPaginaUno.put("hpI", createText(pdfDocument, new Rectangle(333, 439, 93, 10), "hpI", ""));
-        camposPaginaUno.put("kwI", createText(pdfDocument, new Rectangle(425, 439, 85, 10), "kwI", ""));
+        camposPaginaUno.put("cantidadI", createText(pdfDocument, new Rectangle(80, 350, 58, 10), "cantidadI", ""));
+        camposPaginaUno.put("descripcionI", createText(pdfDocument, new Rectangle(142, 350, 113, 10), "descripcionI", ""));
+        camposPaginaUno.put("hpI", createText(pdfDocument, new Rectangle(257, 350, 109, 10), "hpI", ""));
+        camposPaginaUno.put("kwI", createText(pdfDocument, new Rectangle(367, 350, 160, 10), "kwI", ""));
 
-        camposPaginaUno.put("cantidadJ", createText(pdfDocument, new Rectangle(84, 426, 73, 10), "cantidadJ", ""));
-        camposPaginaUno.put("tipoArtefactoJ", createText(pdfDocument, new Rectangle(155, 426, 180, 10), "tipoArtefactoJ", ""));
-        camposPaginaUno.put("hpJ", createText(pdfDocument, new Rectangle(333, 426, 93, 10), "hpJ", ""));
-        camposPaginaUno.put("kwJ", createText(pdfDocument, new Rectangle(425, 426, 85, 10), "kwJ", ""));
+        camposPaginaUno.put("cantidadJ", createText(pdfDocument, new Rectangle(80, 339, 58, 10), "cantidadJ", ""));
+        camposPaginaUno.put("descripcionJ", createText(pdfDocument, new Rectangle(142, 339, 113, 10), "descripcionJ", ""));
+        camposPaginaUno.put("hpJ", createText(pdfDocument, new Rectangle(257, 339, 109, 10), "hpJ", ""));
+        camposPaginaUno.put("kwJ", createText(pdfDocument, new Rectangle(367, 339, 160, 10), "kwJ", ""));
 
-        camposPaginaUno.put("cantidadK", createText(pdfDocument, new Rectangle(84, 413, 73, 10), "cantidadK", ""));
-        camposPaginaUno.put("tipoArtefactoK", createText(pdfDocument, new Rectangle(155, 413, 180, 10), "tipoArtefactoK", ""));
-        camposPaginaUno.put("hpK", createText(pdfDocument, new Rectangle(333, 413, 93, 10), "hpK", ""));
-        camposPaginaUno.put("kwK", createText(pdfDocument, new Rectangle(425, 413, 85, 10), "kwK", ""));
+        camposPaginaUno.put("cantidadK", createText(pdfDocument, new Rectangle(80, 328, 58, 10), "cantidadK", ""));
+        camposPaginaUno.put("descripcionK", createText(pdfDocument, new Rectangle(142, 328, 113, 10), "descripcionK", ""));
+        camposPaginaUno.put("hpK", createText(pdfDocument, new Rectangle(257, 328, 109, 10), "hpK", ""));
+        camposPaginaUno.put("kwK", createText(pdfDocument, new Rectangle(367, 328, 160, 10), "kwK", ""));
 
-        camposPaginaUno.put("cantidadL", createText(pdfDocument, new Rectangle(84, 400, 73, 10), "cantidadL", ""));
-        camposPaginaUno.put("tipoArtefactoL", createText(pdfDocument, new Rectangle(155, 400, 180, 10), "tipoArtefactoL", ""));
-        camposPaginaUno.put("hpL", createText(pdfDocument, new Rectangle(333, 400, 93, 10), "hpL", ""));
-        camposPaginaUno.put("kwL", createText(pdfDocument, new Rectangle(425, 400, 85, 10), "kwL", ""));
+        camposPaginaUno.put("cantidadL", createText(pdfDocument, new Rectangle(80, 317, 58, 10), "cantidadL", ""));
+        camposPaginaUno.put("descripcionL", createText(pdfDocument, new Rectangle(142, 317, 113, 10), "descripcionL", ""));
+        camposPaginaUno.put("hpL", createText(pdfDocument, new Rectangle(257, 317, 109, 10), "hpL", ""));
+        camposPaginaUno.put("kwL", createText(pdfDocument, new Rectangle(367, 317, 160, 10), "kwL", ""));
 
-        camposPaginaUno.put("cantidadM", createText(pdfDocument, new Rectangle(84, 387, 73, 10), "cantidadM", ""));
-        camposPaginaUno.put("tipoArtefactoM", createText(pdfDocument, new Rectangle(155, 387, 180, 10), "tipoArtefactoM", ""));
-        camposPaginaUno.put("hpM", createText(pdfDocument, new Rectangle(333, 387, 93, 10), "hpM", ""));
-        camposPaginaUno.put("kwM", createText(pdfDocument, new Rectangle(425, 387, 85, 10), "kwM", ""));
+        camposPaginaUno.put("cantidadM", createText(pdfDocument, new Rectangle(80, 306, 58, 10), "cantidadM", ""));
+        camposPaginaUno.put("descripcionM", createText(pdfDocument, new Rectangle(142, 306, 113, 10), "descripcionM", ""));
+        camposPaginaUno.put("hpM", createText(pdfDocument, new Rectangle(257, 306, 109, 10), "hpM", ""));
+        camposPaginaUno.put("kwM", createText(pdfDocument, new Rectangle(367, 306, 160, 10), "kwM", ""));
 
-        camposPaginaUno.put("cantidadN", createText(pdfDocument, new Rectangle(84, 374, 73, 10), "cantidadN", ""));
-        camposPaginaUno.put("tipoArtefactoN", createText(pdfDocument, new Rectangle(155, 374, 180, 10), "tipoArtefactoN", ""));
-        camposPaginaUno.put("hpN", createText(pdfDocument, new Rectangle(333, 374, 93, 10), "hpN", ""));
-        camposPaginaUno.put("kwN", createText(pdfDocument, new Rectangle(425, 374, 85, 10), "kwN", ""));
+        camposPaginaUno.put("cantidadN", createText(pdfDocument, new Rectangle(80, 295, 58, 10), "cantidadN", ""));
+        camposPaginaUno.put("descripcionN", createText(pdfDocument, new Rectangle(142, 295, 113, 10), "descripcionN", ""));
+        camposPaginaUno.put("hpN", createText(pdfDocument, new Rectangle(257, 295, 109, 10), "hpN", ""));
+        camposPaginaUno.put("kwN", createText(pdfDocument, new Rectangle(367, 295, 160, 10), "kwN", ""));
 
-        camposPaginaUno.put("cantidadO", createText(pdfDocument, new Rectangle(84, 361, 73, 10), "cantidadO", ""));
-        camposPaginaUno.put("tipoArtefactoO", createText(pdfDocument, new Rectangle(155, 361, 180, 10), "tipoArtefactoO", ""));
-        camposPaginaUno.put("hpO", createText(pdfDocument, new Rectangle(333, 361, 93, 10), "hpO", ""));
-        camposPaginaUno.put("kwO", createText(pdfDocument, new Rectangle(425, 361, 85, 10), "kwO", ""));
+        camposPaginaUno.put("cantidadO", createText(pdfDocument, new Rectangle(80, 280, 58, 10), "cantidadO", ""));
+        camposPaginaUno.put("descripcionO", createText(pdfDocument, new Rectangle(142, 280, 113, 10), "descripcionO", ""));
+        camposPaginaUno.put("hpO", createText(pdfDocument, new Rectangle(257, 280, 109, 10), "hpO", ""));
+        camposPaginaUno.put("kwO", createText(pdfDocument, new Rectangle(367, 280, 160, 10), "kwO", ""));
 
-        camposPaginaUno.put("cantidadP", createText(pdfDocument, new Rectangle(84, 348, 73, 10), "cantidadP", ""));
-        camposPaginaUno.put("tipoArtefactoP", createText(pdfDocument, new Rectangle(155, 348, 180, 10), "tipoArtefactoP", ""));
-        camposPaginaUno.put("hpP", createText(pdfDocument, new Rectangle(333, 348, 93, 10), "hpP", ""));
-        camposPaginaUno.put("kwP", createText(pdfDocument, new Rectangle(425, 348, 85, 10), "kwP", ""));
+        camposPaginaUno.put("cantidadP", createText(pdfDocument, new Rectangle(80, 267, 58, 10), "cantidadP", ""));
+        camposPaginaUno.put("descripcionP", createText(pdfDocument, new Rectangle(142, 267, 113, 10), "descripcionP", ""));
+        camposPaginaUno.put("hpP", createText(pdfDocument, new Rectangle(257, 267, 109, 10), "hpP", ""));
+        camposPaginaUno.put("kwP", createText(pdfDocument, new Rectangle(367, 267, 160, 10), "kwP", ""));
 
-        camposPaginaUno.put("cantidadQ", createText(pdfDocument, new Rectangle(84, 335, 73, 10), "cantidadQ", ""));
-        camposPaginaUno.put("tipoArtefactoQ", createText(pdfDocument, new Rectangle(155, 335, 180, 10), "tipoArtefactoQ", ""));
-        camposPaginaUno.put("hpQ", createText(pdfDocument, new Rectangle(333, 335, 93, 10), "hpQ", ""));
-        camposPaginaUno.put("kwQ", createText(pdfDocument, new Rectangle(425, 335, 85, 10), "kwQ", ""));
+        camposPaginaUno.put("potenciaTotal", createText(pdfDocument, new Rectangle(242, 245, 105, 10), "potenciaTotal", ""));
+        camposPaginaUno.put("potenciaMaxima", createText(pdfDocument, new Rectangle(257, 219, 90, 10), "potenciaMaxima", ""));
 
-        camposPaginaUno.put("cantidadR", createText(pdfDocument, new Rectangle(84, 322, 73, 10), "cantidadR", ""));
-        camposPaginaUno.put("tipoArtefactoR", createText(pdfDocument, new Rectangle(155, 322, 180, 10), "tipoArtefactoR", ""));
-        camposPaginaUno.put("hpR", createText(pdfDocument, new Rectangle(333, 322, 93, 10), "hpR", ""));
-        camposPaginaUno.put("kwR", createText(pdfDocument, new Rectangle(425, 322, 85, 10), "kwR", ""));
-
-        camposPaginaUno.put("cantidadS", createText(pdfDocument, new Rectangle(84, 309, 73, 10), "cantidadS", ""));
-        camposPaginaUno.put("tipoArtefactoS", createText(pdfDocument, new Rectangle(155, 309, 180, 10), "tipoArtefactoS", ""));
-        camposPaginaUno.put("hpS", createText(pdfDocument, new Rectangle(333, 309, 93, 10), "hpS", ""));
-        camposPaginaUno.put("kwS", createText(pdfDocument, new Rectangle(425, 309, 85, 10), "kwS", ""));
-
-        camposPaginaUno.put("totalCarga", createText(pdfDocument, new Rectangle(188, 272, 312, 10), "totalCarga", ""));
-        camposPaginaUno.put("demandaMaximaSimultanea", createText(pdfDocument, new Rectangle(265, 250, 235, 10), "demandaMaximaSimultanea", ""));
-        camposPaginaUno.put("ramo", createText(pdfDocument, new Rectangle(123, 228, 375, 10), "ramo", ""));
-        camposPaginaUno.put("presentarPlanoSi", createText(pdfDocument, new Rectangle(340, 206, 33, 10), "presentarPlanoSi", ""));
-        camposPaginaUno.put("presentarPlanoNo", createText(pdfDocument, new Rectangle(396, 206, 33, 10), "presentarPlanoNo", ""));
-
-        camposPaginaUno.put("potenciaAutorizada", createText(pdfDocument, new Rectangle(283, 136, 145, 10), "potenciaAutorizada", ""));
-        camposPaginaUno.put("totalSolicitado", createText(pdfDocument, new Rectangle(195, 115, 235, 10), "totalSolicitado", ""));
-
-        camposPaginaUno.put("firma", createText(pdfDocument, new Rectangle(125, 71, 147, 10), "firma", ""));
-        camposPaginaUno.put("aclaracion", createText(pdfDocument, new Rectangle(351, 71, 155, 10), "aclaracion", ""));
+        camposPaginaUno.put("firma", createText(pdfDocument, new Rectangle(75, 120, 90, 10), "firma", ""));
+        camposPaginaUno.put("fecha", createText(pdfDocument, new Rectangle(225, 120, 90, 10), "fecha", ""));
+        camposPaginaUno.put("aclaracion", createText(pdfDocument, new Rectangle(360, 120, 90, 10), "aclaracion", ""));
 
         camposPaginaUno
                 .keySet()
@@ -182,8 +159,7 @@ public class FormularioPdf {
 
         // para setearle un valor
         Map<String, String> campoConValor = new HashMap<>();
-        campoConValor.put("calle", "12 de Agosto");
-   
+        // campoConValor.put("calle", "12 de Agosto");
 
         PdfAcroForm acroForm = PdfAcroForm.getAcroForm(pdfDocument, true);
         campoConValor
