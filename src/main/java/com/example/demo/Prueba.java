@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfTextFormField;
+import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
@@ -29,14 +30,14 @@ public class Prueba {
             // Crear un formulario
             PdfAcroForm form = PdfAcroForm.getAcroForm(pdfDoc, true);
 
-            // Crear un campo de texto
-            PdfTextFormField textField = PdfTextFormField.createText(pdfDoc, new com.itextpdf.kernel.geom.Rectangle(50, 750, 200, 20), "textField", "Texto inicial");
-            textField.setFontSize(5);
+            // Crear un campo de texto multilínea
+            PdfTextFormField textField = PdfTextFormField.createMultilineText(pdfDoc, 
+                new Rectangle(50, 750, 400, 100), "textField", "Texto inicial");
+            textField.setFontSize(12);
             form.addField(textField);
-            
-               // Crear un formulario
-            PdfAcroForm form2 = PdfAcroForm.getAcroForm(pdfDoc, false);
-            form2.getField("textField").setValue("otro texto");
+
+            // Establecer un nuevo valor para el campo de texto
+            form.getField("textField").setValue("Este es un texto largo que debería dividirse en varias líneas automáticamente.");
 
             // Cerrar el documento
             document.close();
@@ -49,4 +50,11 @@ public class Prueba {
         }
     }
 
+    public static void main(String[] args) {
+        try {
+            prueba();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
