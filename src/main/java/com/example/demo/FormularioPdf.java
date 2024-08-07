@@ -167,26 +167,44 @@ public class FormularioPdf {
         camposPaginaUno.put("fechaHoraCaudalInicial", createText(pdfDocument, new Rectangle(173, 416, 32, 8), "fechaHoraCaudalInicial", ""));
         camposPaginaUno.put("fechaDiaCaudalInicial", createText(pdfDocument, new Rectangle(205, 416, 36, 8), "fechaDiaCaudalInicial", ""));
         camposPaginaUno.put("fechaMesCaudalInicial", createText(pdfDocument, new Rectangle(241, 416, 34, 8), "fechaMesCaudalInicial", ""));
-        
+
         camposPaginaUno.put("caudalExistenteCantidad", createText(pdfDocument, new Rectangle(133, 430, 34, 8), "caudalExistenteCantidad", ""));
         camposPaginaUno.put("caudalIncrementoCantidad", createText(pdfDocument, new Rectangle(133, 423, 34, 8), "caudalIncrementoCantidad", ""));
         camposPaginaUno.put("caudalInicialCantidad", createText(pdfDocument, new Rectangle(133, 416, 34, 8), "caudalInicialCantidad", ""));
         camposPaginaUno.put("caudalFuturoCantidad", createText(pdfDocument, new Rectangle(173, 400, 32, 8), "caudalFuturoCantidad", ""));
         camposPaginaUno.put("caudalTotalCantidad", createText(pdfDocument, new Rectangle(173, 394, 32, 8), "caudalTotalCantidad", ""));
-        
+
         camposPaginaUno.put("estacionalSi", createText(pdfDocument, new Rectangle(229, 393, 12, 8), "estacionalSi", ""));
         camposPaginaUno.put("estacionalNo", createText(pdfDocument, new Rectangle(264, 393, 12, 8), "estacionalNo", ""));
-        
+
         camposPaginaUno.put("consumoAnualEstimado", createText(pdfDocument, new Rectangle(241, 378, 36, 8), "consumoAnualEstimado", ""));
-        
+
         camposPaginaUno.put("fechaEstimadaIniciacionConsumoDia", createText(pdfDocument, new Rectangle(200, 378, 14, 6), "fechaEstimadaIniciacionConsumoDia", ""));
         camposPaginaUno.put("fechaEstimadaIniciacionConsumoMes", createText(pdfDocument, new Rectangle(214, 378, 14, 6), "fechaEstimadaIniciacionConsumoMes", ""));
         camposPaginaUno.put("fechaEstimadaIniciacionConsumoAnio", createText(pdfDocument, new Rectangle(228, 378, 15, 6), "fechaEstimadaIniciacionConsumoAnio", ""));
-        
-        camposPaginaUno.put("observaciones", createMultilineText(pdfDocument, new Rectangle(85, 253, 455, 100), "observaciones", ""));
 
-        
-        
+        camposPaginaUno.put("calleSuperior", createText(pdfDocument, new Rectangle(345, 425, 100, 6), "calleSuperior", ""));
+        camposPaginaUno.put("calleInferior", createText(pdfDocument, new Rectangle(345, 385, 100, 6), "calleInferior", ""));
+        camposPaginaUno.put("calleIzquierda", createText(pdfDocument, new Rectangle(280, 405, 90, 6), "calleIzquierda", ""));
+        camposPaginaUno.put("calleDerecha", createText(pdfDocument, new Rectangle(428, 405, 90, 6), "calleDerecha", ""));
+
+        camposPaginaUno.put("parcelaA", createText(pdfDocument, new Rectangle(370, 415, 15, 8), "parcelaA", ""));
+        camposPaginaUno.put("parcelaB", createText(pdfDocument, new Rectangle(390, 415, 15, 8), "parcelaB", ""));
+        camposPaginaUno.put("parcelaC", createText(pdfDocument, new Rectangle(410, 415, 15, 8), "parcelaC", ""));
+        camposPaginaUno.put("parcelaD", createText(pdfDocument, new Rectangle(370, 395, 15, 8), "parcelaD", ""));
+        camposPaginaUno.put("parcelaE", createText(pdfDocument, new Rectangle(390, 395, 15, 8), "parcelaE", ""));
+        camposPaginaUno.put("parcelaF", createText(pdfDocument, new Rectangle(410, 395, 15, 8), "parcelaF", ""));
+        camposPaginaUno.put("parcelaG", createText(pdfDocument, new Rectangle(370, 405, 15, 8), "parcelaG", ""));
+        camposPaginaUno.put("parcelaH", createText(pdfDocument, new Rectangle(410, 405, 15, 8), "parcelaH", ""));
+
+        camposPaginaUno.put("observaciones", createMultilineText(pdfDocument, new Rectangle(85, 260, 455, 100), "observaciones", ""));
+
+        camposPaginaUno.put("combustibleUtilizado", createText(pdfDocument, new Rectangle(120, 242, 120, 8), "combustibleUtilizado", ""));
+        camposPaginaUno.put("reserva", createText(pdfDocument, new Rectangle(270, 242, 100, 8), "reserva", ""));
+        camposPaginaUno.put("toneladas", createText(pdfDocument, new Rectangle(383, 246, 10, 8), "toneladas", ""));
+        camposPaginaUno.put("litros", createText(pdfDocument, new Rectangle(383, 238, 10, 8), "litros", ""));
+        camposPaginaUno.put("dias", createText(pdfDocument, new Rectangle(462, 242, 80, 8), "dias", ""));
+
         camposPaginaUno
                 .keySet()
                 .forEach(key -> {
