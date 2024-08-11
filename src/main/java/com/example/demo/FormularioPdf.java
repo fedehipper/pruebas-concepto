@@ -38,13 +38,13 @@ public class FormularioPdf {
         camposPaginaUno.put("nombreCalle", createText(pdfDocument, new Rectangle(230, 547, 280, 10), "nombreCalle", ""));
         camposPaginaUno.put("numeroCalle", createText(pdfDocument, new Rectangle(84, 530, 50, 10), "numeroCalle", ""));
         camposPaginaUno.put("sumatoriaCaudalEquiposSimultaneos", createText(pdfDocument, new Rectangle(236, 496, 274, 10), "sumatoriaCaudalEquiposSimultaneos", ""));
-        camposPaginaUno.put("presionCaudalEquiposSimultaneos", createText(pdfDocument, new Rectangle(181, 479, 43, 10), "presionCaudalEquiposSimultaneos", ""));
+        camposPaginaUno.put("presionCaudalEquiposSimultaneos", createText(pdfDocument, new Rectangle(181, 478, 43, 10), "presionCaudalEquiposSimultaneos", ""));
         camposPaginaUno.put("consumoMensualEstimado", createText(pdfDocument, new Rectangle(215, 239, 60, 10), "consumoMensualEstimado", ""));
         camposPaginaUno.put("horario", createText(pdfDocument, new Rectangle(285, 204, 200, 10), "horario", ""));
         camposPaginaUno.put("empresaSolicitante", createText(pdfDocument, new Rectangle(155, 118, 350, 10), "empresaSolicitante", ""));
        
   
-        camposPaginaUno.put("observaciones", createMultilineText(pdfDocument, new Rectangle(85, 275, 440, 1), "observaciones", ""));
+        camposPaginaUno.put("equipos", createMultilineText(pdfDocument, new Rectangle(85, 275, 440, 200), "equipos", ""));
 
         
         camposPaginaUno
@@ -53,8 +53,8 @@ public class FormularioPdf {
                     PdfFormField formField = PdfFormField.createEmptyField(pdfDocument);
                     formField.setFieldName(key);
                     PdfTextFormField textFormatField = camposPaginaUno.get(key);
-                    if ("observaciones".equals(key)) {
-                        textFormatField.setFontSize(10);
+                    if ("equipos".equals(key)) {
+                        textFormatField.setFontSize(8);
                     } else {
                         textFormatField.setFontSizeAutoScale();
                     }
@@ -85,7 +85,7 @@ public class FormularioPdf {
 
         // para setearle un valor
         Map<String, String> campoConValor = new HashMap<>();
-        campoConValor.put("observaciones", "Había una vez, en un reino lejano llamado Aldoria, un joven llamado Elian. Elian era un campesino que vivía en las afueras de un pequeño pueblo, rodeado de campos de trigo dorado y bosques encantados. Desde niño, había soñado con aventuras más allá de su tranquila vida, deseando descubrir los secretos que el mundo tenía para ofrecer.\n"
+        campoConValor.put("equipos", "Había una vez, en un reino lejano llamado Aldoria, un joven llamado Elian. Elian era un campesino que vivía en las afueras de un pequeño pueblo, rodeado de campos de trigo dorado y bosques encantados. Desde niño, había soñado con aventuras más allá de su tranquila vida, deseando descubrir los secretos que el mundo tenía para ofrecer.\n"
                 + "\n"
                 + "Una noche, mientras contemplaba las estrellas desde su ventana, Elian vio una luz brillante cruzar el cielo. Era una estrella fugaz, pero esta vez, parecía diferente, como si estuviera guiada por un propósito. Al día siguiente, decidió seguir su intuición y dirigirse hacia el bosque encantado, donde la luz había desaparecido.\n"
                 + "\n"
